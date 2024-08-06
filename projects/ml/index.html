@@ -1,0 +1,1145 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../numerical_mathematics/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Machine Learning - Ditmar Halla</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#machine-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Ditmar Halla" class="md-header__button md-logo" aria-label="Ditmar Halla" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ditmar Halla
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Machine Learning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  About Me
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cv/" class="md-tabs__link">
+          
+  
+  CV
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ditmar Halla" class="md-nav__button md-logo" aria-label="Ditmar Halla" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Ditmar Halla
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About Me
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    List of some of my projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-part-clustering-and-gmm-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Part: Clustering and GMM model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First Part: Clustering and GMM model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elbow-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elbow Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silhouette-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silhouette score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaussian-mixture-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussian Mixture Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-part-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second Part: Classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Second Part: Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data reduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classify-validation-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classify Validation dataset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numerical_mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numerical Mathematics using Matlab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sunspot_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sunspot Detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Python with Classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CV
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CV
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-part-clustering-and-gmm-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Part: Clustering and GMM model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First Part: Clustering and GMM model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elbow-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elbow Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silhouette-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silhouette score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaussian-mixture-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussian Mixture Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-part-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second Part: Classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Second Part: Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data reduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classify-validation-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classify Validation dataset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="machine-learning"><a href="https://github.com/ditmarhalla/machine_learning"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></a> <a href="https://github.com/ditmarhalla/machine_learning">Machine Learning</a></h1>
+<div class="admonition note">
+<p class="admonition-title">GitHub</p>
+<p>The code for this project can be found here <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span><br />
+<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.157 22.201A1.784 1.799 0 0 1 5.374 24a1.784 1.799 0 0 1-1.784-1.799 1.784 1.799 0 0 1 1.784-1.799 1.784 1.799 0 0 1 1.783 1.799zM20.582 1.427a1.415 1.427 0 0 1-1.415 1.428 1.415 1.427 0 0 1-1.416-1.428A1.415 1.427 0 0 1 19.167 0a1.415 1.427 0 0 1 1.415 1.427zM4.992 3.336A1.047 1.056 0 0 1 3.946 4.39a1.047 1.056 0 0 1-1.047-1.055A1.047 1.056 0 0 1 3.946 2.28a1.047 1.056 0 0 1 1.046 1.056zm7.336 1.517c3.769 0 7.06 1.38 8.768 3.424a9.363 9.363 0 0 0-3.393-4.547 9.238 9.238 0 0 0-5.377-1.728A9.238 9.238 0 0 0 6.95 3.73a9.363 9.363 0 0 0-3.394 4.547c1.713-2.04 5.004-3.424 8.772-3.424zm.001 13.295c-3.768 0-7.06-1.381-8.768-3.425a9.363 9.363 0 0 0 3.394 4.547A9.238 9.238 0 0 0 12.33 21a9.238 9.238 0 0 0 5.377-1.729 9.363 9.363 0 0 0 3.393-4.547c-1.712 2.044-5.003 3.425-8.772 3.425Z"/></svg></span> <a href="https://github.com/ditmarhalla/machine_learning/blob/main/Part_I.ipynb">Jupyter Notebook Part 1</a><br />
+<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.157 22.201A1.784 1.799 0 0 1 5.374 24a1.784 1.799 0 0 1-1.784-1.799 1.784 1.799 0 0 1 1.784-1.799 1.784 1.799 0 0 1 1.783 1.799zM20.582 1.427a1.415 1.427 0 0 1-1.415 1.428 1.415 1.427 0 0 1-1.416-1.428A1.415 1.427 0 0 1 19.167 0a1.415 1.427 0 0 1 1.415 1.427zM4.992 3.336A1.047 1.056 0 0 1 3.946 4.39a1.047 1.056 0 0 1-1.047-1.055A1.047 1.056 0 0 1 3.946 2.28a1.047 1.056 0 0 1 1.046 1.056zm7.336 1.517c3.769 0 7.06 1.38 8.768 3.424a9.363 9.363 0 0 0-3.393-4.547 9.238 9.238 0 0 0-5.377-1.728A9.238 9.238 0 0 0 6.95 3.73a9.363 9.363 0 0 0-3.394 4.547c1.713-2.04 5.004-3.424 8.772-3.424zm.001 13.295c-3.768 0-7.06-1.381-8.768-3.425a9.363 9.363 0 0 0 3.394 4.547A9.238 9.238 0 0 0 12.33 21a9.238 9.238 0 0 0 5.377-1.729 9.363 9.363 0 0 0 3.393-4.547c-1.712 2.044-5.003 3.425-8.772 3.425Z"/></svg></span> <a href="https://github.com/ditmarhalla/machine_learning/blob/main/Part_II.ipynb">Jupyter Notebook Part 2</a>  </p>
+</div>
+<h2 id="first-part-clustering-and-gmm-model">First Part: Clustering and GMM model</h2>
+<p>In this part, we will determine a reasonable number of clusters inside a given data set, using K-means as the clustering algorithm, and two different performance evaluation method to decide on the optimal parameter k, the Elbow method, and Silhouette score. After that, we construct a Gaussian Mixture Model and fit the given data set.</p>
+<h3 id="elbow-method">Elbow Method</h3>
+<p>The Elbow method which runs K-means clustering on the data set for a range of values for k (say from 1-10), plots the curve of the average score for the model depending on values for k. We will choose the optimal K at which the addition of clustering stops giving significant improvement of the score, where the "elbow" happens in the curve.The score metric applied for this method, amongst many, is the WCSS score, the sum of square distances from each point to its assigned center. Applying this score metric, a lower score indicates a tighter clustering scheme, and hence a better performing model.</p>
+<p>The metric used for the Elbow method is within-cluster sum-of-squares (WCSS). To calculate WCSS, we compute:</p>
+<p><span class="arithmatex">\(S_i = (\displaystyle \sum_{d=1}^D (x_i^d- \mu_k^d))^\frac{1}{2}\)</span>, Euclidean distance from <span class="arithmatex">\(x_i\)</span> to its cluster centroid <span class="arithmatex">\(\mu_k\)</span><br />
+<span class="arithmatex">\(S_k = \displaystyle \frac{1}{N}\sum_{i=1}^{N_k} S_i\)</span>, the average within-cluster sum-of-squares for one cluster <span class="arithmatex">\(k\)</span><br />
+WCSS = <span class="arithmatex">\(\displaystyle \frac{1}{K}\sum_{k=1}^{K} S_k\)</span>, the average within-cluster sum-of-squares for all K clusters.  </p>
+<p>Essentially, WCSS measures the variability of the observations within each cluster. In general, a cluster that has a small sum of squares is more compact than a cluster that has a large sum of squares. Clusters that have higher values exhibit greater variability of the observations within the cluster. WCSS suffers from various drawbacks:</p>
+<p>WCSS makes the assumption that clusters are convex and isotropic, which is not always the case. It responds poorly to elongated clusters, or manifolds with irregular shapes.</p>
+<p>WCSS is not a normalized metric: we just know that lower values are better and zero is optimal. But in very high-dimensional spaces, Euclidean distances tend to become inflated. Running a dimensionality reduction algorithm such as Principal component analysis (PCA) prior to k-means clustering can alleviate this problem and speed up the computations.</p>
+<p><img alt="Image title" src="../images/ml/Elbow_distortion.png" /></p>
+<p>After running dimensional reduction on the 10-dimensional data set down to only 2-dimensional data set, we plot the curve of WCSS against a range of k in (2, 14). From the illustration \ref{Elbow}, the "elbow" happens at value k in range (6,8), outside of which any subsequent values of k fail to give much better clustering fit. We can argue for this case, the optimal k can be any value from 6,7,8.</p>
+<h3 id="silhouette-score">Silhouette score</h3>
+<p>The second evaluation method is through the silhouette score, the normalized difference between distances of intra-cluster and nearest-cluster distance. Applying this score metric, We choose the optimal value where the silhouette score is maximized.</p>
+<p>The silhouette score is computed as the normalized difference between two distances for every point <span class="arithmatex">\(x_i\)</span> in the data set. The first one records the distance between <span class="arithmatex">\(x_i\)</span> to all members sharing its clusters. The second one measures the distance between <span class="arithmatex">\(x_i\)</span> and the foreign nearest cluster. The mean difference across all data points gives us the silhouette score, such that, a cluster that has high silhouette score is more compact and separated to other clusters.</p>
+<p><img alt="Image title" src="../images/ml/Elbow_sil.png" /></p>
+<p>We plot the curve of WCSS against a range of k in (3, 12). From the illustration, the performance is maximized at value k = 8, with the second best at k = 7. Combine with the result from the Elbow method, we can confidently select k = 8 to be the optimal number of clusters for this data set.</p>
+<h3 id="gaussian-mixture-model">Gaussian Mixture Model</h3>
+<p>A Gaussian mixture model is a probabilistic model that assumes all the data points are generated from a mixture of a finite number of Gaussian distributions with unknown parameters, specifically the mean and co-variance matrix. The Gaussian mixture model implements the expectation-maximization  algorithm for fitting mixture-of-Gaussian models. The algorithm alternates between two main steps. From the current Gaussian cluster characteristics, it assigns a weight variable to a data point <span class="arithmatex">\(x_i\)</span>, which corresponds to how likely <span class="arithmatex">\(x_i\)</span> belongs to each Gaussian <span class="arithmatex">\(k\)</span> (Expectation step). Then from the standpoint of the data points, it redefines every Gaussian by the new parameters based solely on the newly acquired weights.</p>
+<p>Let the data set X contains data point <span class="arithmatex">\(x_i\)</span>, <span class="arithmatex">\(i = 1,2,\dots ,n\)</span> of <span class="arithmatex">\(d\)</span>-dimensional space. We assume a mixture of <span class="arithmatex">\(K\)</span> finite Gaussian distributions, each Gaussian <span class="arithmatex">\(k\)</span> is characterized by a set of mean and co-variance matrix (<span class="arithmatex">\(\mu_k, \Sigma_k\)</span>). Each data point <span class="arithmatex">\(x_i\)</span> admits a probability with respect to each Gaussian cluster <span class="arithmatex">\(k\)</span>, <span class="arithmatex">\(N(\mu_k, \Sigma_k)\)</span>. We also assume a prior probability <span class="arithmatex">\(\pi_k\)</span>, how likely that Gaussian <span class="arithmatex">\(k\)</span> is chosen. The Expectation-Maximization is performed as follows.</p>
+<ol>
+<li>Initialize the prior probability <span class="arithmatex">\(\pi_k\)</span>, and the Gaussian <span class="arithmatex">\(\mu_k, \Sigma_k\)</span>, for every <span class="arithmatex">\(k = 1, 2, .., K\)</span>.</li>
+<li>Predict a weight for every pair data point <span class="arithmatex">\(x_i\)</span> and Gaussian <span class="arithmatex">\(k\)</span>, for how likely that <span class="arithmatex">\(x_i\)</span> belongs to this Gaussian <span class="arithmatex">\(k\)</span>. <span class="arithmatex">\(\gamma(i,k) = \frac{N(\mu_k, \Sigma_k).\pi_k}{\sum_{j = 1}^K N(\mu_k, Sigma_k).\pi_j}\)</span></li>
+<li>Using only the new weight <span class="arithmatex">\(\gamma(i,k)\)</span> as navigation for the K Gaussian clusters, redefine the Gaussian clusters by the new prior probability <span class="arithmatex">\(\pi_k\)</span>, and new parameters <span class="arithmatex">\((\mu_k, \Sigma_k)\)</span>.</li>
+<li>Check for convergence, conclude the iterative process if the weights' difference between two iterations <span class="arithmatex">\(\epsilon\)</span> is smaller than some preset threshold.</li>
+</ol>
+<p><img alt="Image title" src="../images/ml/GMM.png" /></p>
+<p>Based on the previous results, the optimal number of clusters for this particular data set is 8 clusters. We reduce out data set to only 2-dimensional space, and apply a pre-built Gaussian Mixture Model.</p>
+<h2 id="second-part-classification">Second Part: Classification</h2>
+<p>The K-nearest neighbors (KNN) algorithm is a type of supervised machine learning algorithms. We will explore the theory behind KNN algorithm, and address some problems that often occur in its implementation. Then, we will build a Python module that gives us a KNN classifer for a training data set, and also solve some of the problems discussed before. </p>
+<h3 id="algorithm">Algorithm</h3>
+<p>Let <span class="arithmatex">\((X,C)\)</span> be the training set of n data points, $X \subset \mathbb{R}^d $ and label set <span class="arithmatex">\(C= \{c_1, c_2, \dots , c_m\}\)</span> with the class labelling function <span class="arithmatex">\(c: \mathbb{R}^d \longrightarrow C\)</span>. Assume <span class="arithmatex">\(c(x_i)\)</span> is the class label of a data point <span class="arithmatex">\(x_i\)</span>.
+The KNN algorithm uses  <span class="arithmatex">\((X,C)\)</span> to identify the class <span class="arithmatex">\(c(\hat{x})\)</span> of the new data point <span class="arithmatex">\(\hat{x}\)</span> in three main steps. KNN algorithm\</p>
+<ol>
+<li><strong>calculates the distances</strong> <span class="arithmatex">\(d(\hat{x}, x_i)\)</span>, <span class="arithmatex">\(i = 1,2,...,n\)</span></li>
+<li><strong>sorts points by the distances</strong>:<br />
+<span class="arithmatex">\(d(\hat{x}, x(1)) \leq d(\hat{x}, x(2)) \leq \dots \leq d(\hat{x}, x(n))\)</span></li>
+<li><strong>decides for class</strong> <span class="arithmatex">\(c_i\)</span>} if:<br />
+<span class="arithmatex">\(i = \argmax_{j=1,..,m} \sum_{nb=1}^k \sigma(c_j, c(x_{nb})), \sigma(a,b)= \begin{cases}
+   1 &amp;\text{if  }  a=b\\
+   0 &amp;\text{if  }  otherwise
+\end{cases}\)</span><br />
+i.e. the winner-class is whichever class with the most appearances in K-nearest neighbors. An alternative decision-making method is choosing the best scored class, in which a neighbor's score is weighted by how close it is to the data point <span class="arithmatex">\(\hat{x}\)</span>, as opposed to uniform weighted. In this case, the algorithm decides for class <span class="arithmatex">\(c_i\)</span> if<br />
+<span class="arithmatex">\(i = \argmax_{j=1,..,m} \sum_{nb=1}^k \sigma(c_j, c(x_{nb})).w_m, \sigma(a,b) = \begin{cases}
+    1 &amp; \text{if } a=b\\
+    0 &amp; \text{if } otherwise
+\end{cases}\)</span><br />
+where <span class="arithmatex">\(w_m =\displaystyle \frac{ \frac{1}{d(x(nb),\hat{x})}} {\sum_{p=1}^k \frac{1}{d(x(p),\hat{x})}}\)</span> is the normalized distance from neighbor $m $ to new data point <span class="arithmatex">\(x\)</span>.</li>
+</ol>
+<h3 id="problems">Problems</h3>
+<p>One of the most important remarks on the KNN algoritm is that a particular model of KNN classifer is built on a specific training data set. The problems that we discuss below are specific to this training data set, as are the methods that we address those problems. 
+This particular training data set <span class="arithmatex">\((X,C)\)</span> has 637 data points, $X \subset \mathbb{R}^2 $,  <span class="arithmatex">\(C= \{c_1, c_2\}\)</span>.</p>
+<h4 id="parameter-selection">Parameter Selection</h4>
+<p>Finding an optimal K parameter is perhaps the very first problem one might encounter while implementing the K-nearest Neighborhood Algorithm. We can address this problem by allowing the KNN classifier to perform cross validation on our training data set, with various K parameters. The model with the best performance with provide us the optimal K which is best suited for this particular training data set.<br />
+There are indeed a few techniques of cross validation, however we will apply the n-fold cross validation technique, to evaluate KNN models powered by a range of K = 1,...\ The steps are as follows:  </p>
+<ol>
+<li>Choose K value for the classifier.  </li>
+<li>The data set <span class="arithmatex">\((X,C)\)</span> is partitioned into n sub-folds (subsets), $(X,C) = \bigcup\limits_{s=1}^{n} (X_s,C_s) $  </li>
+<li>For each <span class="arithmatex">\(s\)</span>, take the testing data $(X_{test},C_{test}) = (X_s,C_s) $, and training data $(X_{train},C_{train})= (X,C) \setminus (X_{s},C_{s}) $.  <span class="arithmatex">\(X_{test}\)</span> is to be classified by a K-NN classifier trained on the training data. The accuracy rate is chosen as the performance metric for this s, defined as:<br />
+<span class="arithmatex">\(E_s = \frac{\displaystyle \sum_{j = 1}^{|X_{test}|}\sigma(c_j, c(x_j))}{|X_{test}|}, \quad \sigma(c_j, c(x_j))=
+      \begin{cases}
+      1,&amp; \text{if } c_j= c(x_j)\\
+      0,              &amp; \text{otherwise}
+      \end{cases}\)</span>  </li>
+<li>Evaluate for all <span class="arithmatex">\(s\)</span>'s, and obtain average performance metric for the whole model at this particular K parameter, <span class="arithmatex">\(E_K =\displaystyle \frac{1}{n}. \displaystyle \sum_{s=1}^n E_s\)</span>  </li>
+<li>Compare the performance of K-NN classifer models in a range of K, and choose the best performing model.  </li>
+</ol>
+<p>The n-fold cross validation is suitable for our training data set, since with 637 data points of 2-dimensional space, the data set is large enough such that the selected training set can generally represent the entire data set, but not too large such that we risk the validation going for too long.  </p>
+<p>The listing results below compare average accuracy rates between classifier models varied by parameter K, and also varied by the decision-scheme.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Listing 1 , 10-fold cross-validation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">k =  1 , by uniform:  0.906 , by distance:  0.906</td>
+</tr>
+<tr>
+<td style="text-align: left;">k =  2 , by uniform:  0.915 , by distance:  0.906</td>
+</tr>
+<tr>
+<td style="text-align: left;">k =  3 , by uniform:  0.925 , by distance:  0.922</td>
+</tr>
+<tr>
+<td style="text-align: left;">k =  4 , by uniform:  0.928 , by distance:  0.922</td>
+</tr>
+<tr>
+<td style="text-align: left;">k =  5 , by uniform:  0.92 , by distance:  0.923</td>
+</tr>
+<tr>
+<td style="text-align: left;">k =  6 , by uniform:  0.923 , by distance:  0.917</td>
+</tr>
+<tr>
+<td style="text-align: left;">k =  7 , by uniform:  0.916 , by distance:  0.92</td>
+</tr>
+<tr>
+<td style="text-align: left;">k =  8 , by uniform:  0.923 , by distance:  0.917</td>
+</tr>
+<tr>
+<td style="text-align: left;">k =  9 , by uniform:  0.917 , by distance:  0.917</td>
+</tr>
+</tbody>
+</table>
+<p>Overall, performance is not substantially different between the two decision-making schemes for every pair models of the same parameter K. As for the parameter K selection, K <span class="arithmatex">\(\in\)</span> {3,4} generates the best- and second-best performing models with the "uniform" scheme, and K <span class="arithmatex">\(\in\)</span> {3,4,5} with the "distance" scheme. Taking into consideration that the task at hand is a two-class problem, we should avoid choosing an even-value for K with the uniform decision-scheme, K = 3 is the optimal choice for this model configuration with either decision-scheme.  </p>
+<h4 id="data-reduction">Data reduction</h4>
+<p>Another problem is a time- and resource-problem. The KNN classifier needs to compute and store as many distances as training data points for each new data point <span class="arithmatex">\(\hat{x}\)</span>. The problem makes us question the necessity of including every single training point in the classifier. To tackle this problem, we identify the prototypes, a set of data points such that a 1-NN classifier can perform as accurately as a 1-NN classifier trained by the entire training data set.  </p>
+<p>Let <span class="arithmatex">\(\mathbb{X} = \mathbb{O} \; \cup \mathbb{P} \; \cup \mathbb{A}\)</span>, with <span class="arithmatex">\(\mathbb{X}\)</span> training data set, <span class="arithmatex">\(\mathbb{O}\)</span> set of outliers, <span class="arithmatex">\(\mathbb{A}\)</span> set of absorbed points, and <span class="arithmatex">\(\mathbb{P}\)</span> set of prototypes. We identify outliers as follows:<br />
+For <span class="arithmatex">\(x_i \in \mathbb{X}\)</span>,</p>
+<ol>
+<li>classify <span class="arithmatex">\(x_i\)</span> with KNN classifer trained by set $\hat{\mathbb{X}} = \mathbb{X} \setminus {x_i} $, and compare to the true class label of <span class="arithmatex">\(x_i\)</span></li>
+<li>if <span class="arithmatex">\(x_i\)</span> is incorrectly classified, <span class="arithmatex">\(x_i\)</span> is an outlier. </li>
+</ol>
+<p>To detect absorbed points and prototype, we do as follows:  </p>
+<ol>
+<li>assume <span class="arithmatex">\(\mathbb{A} = \mathbb{X}\)</span> and <span class="arithmatex">\(\mathbb{P} = \varnothing\)</span>.</li>
+<li>initilize with random <span class="arithmatex">\(x_i \in \mathbb{A}\)</span> , <span class="arithmatex">\(\mathbb{A} = \mathbb{A} \setminus \{x_i\}\)</span> and <span class="arithmatex">\(\mathbb{P} = \mathbb{P} \cup \{x_i\}\)</span></li>
+<li>assume a helping set $ U = \mathbb{A}$</li>
+<li>while <span class="arithmatex">\(U \neq \varnothing\)</span>, we do:  <ol>
+<li>choose <span class="arithmatex">\(x \in U\)</span> and classify <span class="arithmatex">\(x\)</span> using 1-NN classifier trained by <span class="arithmatex">\(\mathbb{P}\)</span>.</li>
+<li>if 1-NN predicted incorrectly, then <span class="arithmatex">\(\mathbb{A} = \mathbb{A} \setminus \{x_i\}\)</span> and <span class="arithmatex">\(\mathbb{P} = \mathbb{P} \cup \{x_i\}\)</span>, and $ U = \mathbb{A}$.<br />
+Else, <span class="arithmatex">\(\mathbb{U} = \mathbb{U} \setminus \{x_i\}\)</span>.</li>
+</ol>
+</li>
+</ol>
+<p>This process of identifying prototypes involves randomly choices for <span class="arithmatex">\(x\)</span> at step 3, and then step 4. Therefore, running the process multiple times often yields slightly different prototype sets. 
+The listing below shows how the dataset changes when we perform the data reduction process.</p>
+<table>
+<thead>
+<tr>
+<th>Data reduction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original len(dataset):  637</td>
+</tr>
+<tr>
+<td>Outliers:  32</td>
+</tr>
+<tr>
+<td>Absorbed points found:   586</td>
+</tr>
+<tr>
+<td>24 Prototypes found, seed = 0</td>
+</tr>
+<tr>
+<td>16 Prototypes found, seed = 100</td>
+</tr>
+<tr>
+<td>19 Prototypes found, seed = 200</td>
+</tr>
+</tbody>
+</table>
+<p>The data reduction process has removed 32 outliers from the original dataset, using 3-NN classifier, to make a new dataset. From the new dataset, sans outliers, a set of 24 prototypes are identified, with a fixed seed at 0. Other seeds give different Prototype sets. </p>
+<p><img alt="Image title" src="../images/ml/class.png" /></p>
+<p>The potentially problematic area lies where the two classes slightly blend together. We find the majortity of outliers in the mixture of two classes, with some outliers (x-markers) scattering the outside perimeter of the data sets. We also find the most prototypes (triangles) in the intersection of the classes. These prototypes can map out the separation between the classes, and classify the entire test set, as (almost) accurately as the whole training set. The absorbed points are the remaining o-markers.  </p>
+<h4 id="classify-validation-dataset">Classify Validation dataset</h4>
+<p>At this point, we have optimized the KNN classifier with respect to its parameter K (K = 3), and with respect to the training dataset. Based on this result, we can create a new 3-NN classifier trained on only the prototype set, by which we predict the class labels for <span class="arithmatex">\(\textit{val\textunderscore dataset}\)</span>.  </p>
+<p><img alt="Image title" src="../images/ml/test.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.css"></script>
+      
+    
+  </body>
+</html>
