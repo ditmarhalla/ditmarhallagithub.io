@@ -1,0 +1,57 @@
+site_name: Ditmar Halla
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - search.suggest
+    - search.highlight
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+plugins:
+  - blog:
+      archive: false
+  - search
+nav:
+  - index.md
+  - Projects:
+    - projects/index.md
+    - Machine Learning: projects/ml.md
+    - Numerical Mathematics using Matlab: projects/numerical_mathematics.md
+    - Sunspot Detection: projects/sunspot_detection.md
+    - Learning Python with Classification: projects/classification.md
+  - Blog:
+    - blog/index.md
+  - CV:
+    - cv/index.md
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+  - https://unpkg.com/katex@0/dist/katex.min.css
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
